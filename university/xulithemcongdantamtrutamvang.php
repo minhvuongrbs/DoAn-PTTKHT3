@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION['username'])){
+    header("Location:login.php");
+}
 	$CMND = $_POST['CMND'];
 	$AddressNew = $_POST['AddressNew'];
 	$AddressCurrent = $_POST['AddressCurrent'];

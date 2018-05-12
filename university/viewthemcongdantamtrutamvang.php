@@ -1,3 +1,14 @@
+<?php 
+
+session_start();
+
+if(!isset($_SESSION['username'])){
+    header("Location:login.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +72,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Thêm thông tin tạm trú tạm vắng</h4>
-
+                                    
                                     <form class="form p-t-20" action="xulithemcongdantamtrutamvang.php" method="post">
                                         <!-- <div class="form-group">
                                             <label for="exampleInputuname">Tên đầy đủ</label>
@@ -116,8 +127,8 @@
                         </div>
                     </div>
                 </div>
-
-
+                
+               
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

@@ -1,4 +1,10 @@
-<?php 
+<?php
+session_start();
+
+if(!isset($_SESSION['username'])){
+    header("Location:login.php");
+}
+    
 	$TemId = $_POST['TemId'];
 	$CMND = $_POST['CMND'];
 	$AddressNew = $_POST['AddressNew'];

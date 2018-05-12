@@ -1,10 +1,9 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
-  <title>Login Admin</title>
+  <title>Random Login Form</title>
   
   
   
@@ -157,60 +156,18 @@ body{
 </head>
 
 <body>
-<?php 
 
-if(isset($_POST['btn-login'])){
-    $host="localhost";
-    $database="quanlycongdan";
-    $username="root";
-    $password="";
-    $pdo=new PDO("mysql:host=$host;dbname=$database",$username,$password);
-    
-    $user=$_POST['user'];
-    $passwordlogin=$_POST['password'];
-    
-    $sql="Select * From users where UserName='$user' and Password='$passwordlogin'";
-    
-    $query=$pdo->query($sql);
-    
-    $query->setFetchMode(PDO::FETCH_ASSOC);
-    
-    $query->execute();
-    
-    $i=0;
-    while ($row=$query->fetch()){
-        $i+=1;
-    }
-    
-    
-    if($i>0){
-       $_SESSION['username']=$user;
-       header("Location:quan_ly_cong_dan.php");
-    }
-    else{
-        $_SESSION['errorlogin']="Tài khoản hoặc mật khẩu không chính xác";
-        header("Location:login.php");
-    }
-}
-    
-?>
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>ĐỒ ÁN<span></span></div>
+			<div>Site<span>Random</span></div>
 		</div>
 		<br>
-		<form method="post">
 		<div class="login">
-				<p style="color: red"><?php if (isset($_SESSION['errorlogin'])){
-				    echo $_SESSION['errorlogin'];
-				}?></p>
 				<input type="text" placeholder="username" name="user"><br>
 				<input type="password" placeholder="password" name="password"><br>
-				<input type="submit" name="btn-login" value="Login">
-				
+				<input type="button" value="Login">
 		</div>
-		</form>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
   

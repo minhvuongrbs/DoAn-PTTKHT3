@@ -85,15 +85,15 @@
                       title: "Điện thoại",
                       type: "number",
                       width: 100
-                  },
-                  {
-                      type: "control",
-                      width: 80
                   },{
                       name:"Number",
                       title: "Số hiệu bản án",
                       type: "text",
                       width: 200
+                  },
+                  {
+                      type: "control",
+                      width: 80
                   }]
             })
         }(),

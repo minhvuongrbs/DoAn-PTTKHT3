@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php session_start();
+
+if(!isset($_SESSION['username'])){
+   header("Location:login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -25,7 +31,7 @@
 </head>
 
 <body class="skin-blue fixed-layout">
-<?php
+<?php 
 if(isset($_POST['btn-insert'])){
 $host="localhost";
 $database="quanlycongdan";
@@ -111,7 +117,7 @@ header("Location: quan_ly_cong_dan.php");
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
           <?php require('components/sidebar.php'); ?>
-
+        
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
@@ -134,7 +140,7 @@ header("Location: quan_ly_cong_dan.php");
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                                 <li class="breadcrumb-item active"><a href="quan_ly_cong_dan.php">Quản lý công dân</a></li>
                             </ol>
-
+                           
                         </div>
                     </div>
                 </div>
@@ -204,13 +210,13 @@ header("Location: quan_ly_cong_dan.php");
                                             </div>
                                         </div>
                                     </div>
-
+                                    
                                     <div class="form-group">
                                         <div class="row">
                                             <label class="col-sm-12">Giới tính</label>
                                             <div class="col-sm-12">
                                                 <select name="gender" class="form-control text-muted">
-
+                                                    
                                                     <option value="M" selected="selected">Male</option>
                                                     <option value="F">Female</option>
                                                 </select>
@@ -261,7 +267,7 @@ header("Location: quan_ly_cong_dan.php");
                                             <label class="col-sm-12">Tình trạng hôn nhân</label>
                                             <div class="col-sm-12">
                                                 <select name="statusmarriage" class="form-control text-muted">
-
+                                                    
                                                     <option value="Y" selected="selected">Đã kết hôn</option>
                                                     <option value="N">Chưa kết hôn</option>
                                                 </select>
@@ -327,7 +333,7 @@ header("Location: quan_ly_cong_dan.php");
                                             <label class="col-sm-12">Tình trạng công dân</label>
                                             <div class="col-sm-12">
                                                 <select name="status" class="form-control text-muted">
-
+                                                    
                                                     <option value="Y" selected="selected">Có quyền</option>
                                                     <option value="N">Đã bị khóa</option>
                                                 </select>
@@ -341,7 +347,7 @@ header("Location: quan_ly_cong_dan.php");
                         </div>
                     </div>
                 </div>
-
+               
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

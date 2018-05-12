@@ -1,4 +1,10 @@
-<?php  session_start();?>
+<?php  session_start();
+
+if(!isset($_SESSION['username'])){
+    header("Location:login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +33,7 @@
 
 <body class="skin-blue fixed-layout">
 
-<?php
+<?php 
 $username="";
 if(isset($_SESSION['username'])){
 $username=$_SESSION['username'];
@@ -97,16 +103,16 @@ $username=$_SESSION['username'];
                         <!-- Column -->
                         <div class="card">
                             <div class="card-body">
-
+                              
                                 <div id="basicgrid"></div>
                             </div>
                         </div>
                         <!-- Column -->
                         <!-- Column -->
-
+                       
                         <!-- Column -->
                         <!-- Column -->
-
+                      
                         <!-- Column -->
                     </div>
                 </div>

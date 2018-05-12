@@ -1,4 +1,11 @@
-<?php 
+<?php
+session_start();
+
+if(!isset($_SESSION['username'])){
+    header("Location:login.php");
+}
+
+
 	$TemId = $_GET['TemId'];
 	require('viet/src/db_connect.php');
     $sql = "SELECT `TemId`, `CitizenID`, `AddressCurrent`, `AddressNew`,  citizen.FullName, citizen.CMND, citizen.Phone FROM `temporary`,`citizen` WHERE citizen.CitId = temporary.CitizenID AND  TemId = '{$TemId}'";
